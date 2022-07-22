@@ -40,6 +40,14 @@ Evolution of large and small crystal (x<sub>2</sub>) after initial timestep. Dot
 
 Solving this ODE in a binary case with a multivariate Euler predicts that for crystals of N sizes, the smaller crystals will be consumed by larger ones until only there is only a single crystal size. Because of the behavior of the equilibria points, one attracting x(t) while the other repelling, a solution exists for every physically possible crystal size. 
 
-## Runge Kutta
+## DNA Hybridization
+
+DNA Hybridization behaves according to the ODE:
+
+![DNA ODE](/res/dna.jpg)
+
+The 4th 
+
+
 
 
