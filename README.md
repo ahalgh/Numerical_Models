@@ -25,7 +25,7 @@ This problem can be expanded to model a system of crystals with N sizes. All the
 
 The coefficient μ is assumed to be identical for all crystals in the system since they exist in the same crystallizer. The total concentration of the solution over time is then assumed to be the difference between the initial concentration and the concentration from all crystals at time t:
 
-![ODE Solved](/res/c0.jpg)
+![ODE Solved](/res/ct.jpg)
 
 The growth rate of each respective crystal can be expressed in the same form as the single crystal ODE
 
