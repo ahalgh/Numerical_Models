@@ -12,12 +12,26 @@ Ostwald Ripening is a physical phenomenon observed in solutions that governs the
 
 Process is very useful in batch crystalization
 
-This model can be described by the autonomous ODE:
+The single crystal model can be described by the autonomous ODE:
 
 ![ODE](/res/ODE.jpg)
 
 with c* being the saturation concentration as the dilution of the solution goes to infinity, Γ being the favorability of solubility in the system, and x* being the size of crystals at time 0. 
 σ is the surface energy, v is the molar volume of the solute, R is the gas constant, c0 is the initial concentration, and T being temperature. In this model, c*,Γ,μ,c0,x* are all parameters that can be optimized to reach a desired crystal size at x(t).
+
+This problem can be expanded to model a system of crystals with N sizes. All theory remains the same. The initial solute concentration becomes the preexisting concentration and the sum of the contributions from all crystals of N sizes:
+
+![ODE Solved](/res/c1.jpg)
+
+The coefficient μ is assumed to be identical for all crystals in the system since they exist in the same crystallizer. The total concentration of the solution over time is then assumed to be the difference between the initial concentration and the concentration from all crystals at time t:
+
+![ODE Solved](/res/c0.jpg)
+
+The growth rate of each respective crystal can be expressed in the same form as the single crystal ODE
+
+![ODE Solved](/res/full.jpg)
+
+This means that smaller crystals in the system dissolve first, reaching x(t)<sub>i</sub> = 0. The dissolution of smaller crystals propagates through the system until eventually only crystals of size x(t)<sub>N</sub> remains. Once this stage of crystallization has been reached, all contributions from crystals of size x(t)<sub>i</sub> are mitigated and the problem diverts back into an ODE modelled by the single crystal problem. Once this stage has been reached, the size of the surviving crystal is used as a parameter to determine the final steady-state solutions of the model.
 
 ### Result of Model
 ![ODE Solved](/res/ODE_Evolution.jpg)
