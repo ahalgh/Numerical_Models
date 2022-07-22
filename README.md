@@ -4,7 +4,7 @@ Several numerical modeling codes written in cpp and matlab
 
 Numerical Rootfinding and ODE solvers
 
-### Examples of results 
+## Ostwald Ripening Model
 
 [Ostwald Ripening Model](https://en.wikipedia.org/wiki/Ostwald_ripening) Written in C++ 
 
@@ -19,5 +19,11 @@ This model can be described by the autonomous ODE:
 with c* being the saturation concentration as the dilution of the solution goes to infinity, Γ being the favorability of solubility in the system, and x* being the size of crystals at time 0. 
 σ is the surface energy, v is the molar volume of the solute, R is the gas constant, c0 is the initial concentration, and T being temperature. In this model, c*,Γ,μ,c0,x* are all parameters that can be optimized to reach a desired crystal size at x(t).
 
-Solving this ODE in a binary case with a multivariate Euler predicts that fr crystals of N sizes, the smaller crystals will be consumed by larger ones until only there is only a single crystal size. Because of the behavior of the equilibria points, one attracting x(t) while the other repelling, a solution exists for every physically possible crystal size. 
+Solving this ODE in a binary case with a multivariate Euler predicts that for crystals of N sizes, the smaller crystals will be consumed by larger ones until only there is only a single crystal size. Because of the behavior of the equilibria points, one attracting x(t) while the other repelling, a solution exists for every physically possible crystal size. 
+
+### Result of Model
+![ODE Solved](/res/ODE_Evolution.jpg)
+
+Evolution of large and small crystal (x<sub>2</sub>) after initial timestep. Dotted lines are the steady state solutions to the ODE. Higher equilibrium is attractive, while lower is repulsive.
+
 
