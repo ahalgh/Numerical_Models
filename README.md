@@ -81,11 +81,11 @@ concentration vector U is set to the initial conditions. Once the problem has be
 
 The diffusion term is given by:
 
-![diffusion term](/res/d.png)
+![diffusion term](/res/dt.jpg)
 
 By combining these two terms, the net flux can be found. The concentration at the next timestep can be found by advancing the PDE through the numerical equation: 
 
-![Full](/res/d.png)
+![Full](/res/concentration.jpg)
 
 From this model, the concentration of the advection diffusion equation at any time T can be
 found. 
