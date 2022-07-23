@@ -56,6 +56,54 @@ This type of reaction can happen in a [microfluidic device](https://en.wikipedia
 
 ![DNA ODE](/res/DNA_AD.png)
 
+## Explicit Advection - Diffusion Model
 
+The 1-dimensional advection-diffusion process with: 
+* Diffusivity D > 0 
+* Concentration of u(x,t) 
+* Initial profile of u(x,0) = u<sub>init</sub>(x)
+* Velocity v
+* Interval of a ≤ x ≤ b with Neuman boundary conditions
+* Time interval of 0 ≤ t ≤ t<sub>end</sub>.
 
+The PDE for the advection-diffusion process can be given by:
 
+![advection-diffusion process](/res/diffusion.jpg)
+
+Where the change in concentration with respect to time is equal to the difference of contributions from diffusion and advection. The initial condition for this problem is given by a square bump: u<sub>init</sub>(x) = 5 for of 1 ≤ x ≤ 2 and u<sub>init</sub>(x) = 0 otherwise. Since the ends of this interval are impermeable, Neuman boundary conditions are enforced, meaning that F<sub>1/2</sub>  and F<sub>M+1</sub> are both equal to 0. To ensure convergence, the timestep must be restricted by:
+
+![timestep restriction](/res/restriction.jpg)
+
+To solve numerically solve this PDE, space is discretized equally between a and b. The
+concentration vector U is set to the initial conditions. Once the problem has been set up, The flux at each timestep is calculated from the sum of the advection and the diffusion terms. The advection term is given by:
+
+![advection term](/res/advection.jpg)
+
+The diffusion term is given by:
+
+![diffusion term](/res/d.png)
+
+By combining these two terms, the net flux can be found. The concentration at the next timestep can be found by advancing the PDE through the numerical equation: 
+
+![Full](/res/d.png)
+
+From this model, the concentration of the advection diffusion equation at any time T can be
+found. 
+
+### Result of the Model
+
+Pure advection and pure diffusion can be modelled by setting the opposite term to 0 through the parameters. Can model many physical problems.
+
+#### Pure Advection
+
+![Pure Advection](/res/Pure_Advection.png)
+
+#### Pure Diffusion
+
+![Pure Diffusion](/res/Pure_Diffusion.png)
+
+#### Advection and Diffusion
+
+![Advection and Diffusion](/res/Both_AD.png)
+
+A system with impermeable boundary conditions undergoing diffusion for infinite time will eventually reach equal concentration for all points of the mesh. 
