@@ -42,11 +42,19 @@ Solving this ODE in a binary case with a multivariate Euler predicts that for cr
 
 ## DNA Hybridization
 
+##### Utilizes 4th Order Runge Kutta method
+
 DNA Hybridization behaves according to the ODE:
 
 ![DNA ODE](/res/dna.jpg)
 
-The 4th 
+With k<sub>on</sub> being the forward rate constant for adsorption, k<sub>off</sub> being the backwards rate constant [1/s], L<sub>im</sub> being the binding site density [sites/cm<sup>2</sup>], and C<sub>1</sub> being the mobile target molecule concentration [nM].
+
+This type of reaction can happen in a [microfluidic device](https://en.wikipedia.org/wiki/Microfluidics) as target DNA binds to the surface. Using this ODE, an adsorption and desorption experiment can be modeled. In this case, the reaction continues until a steady state solution is reached. After, target molecules are flushed out of the system in the desorption phase.
+
+### Result of the Model
+
+![DNA ODE](/res/DNA_AD.png)
 
 
 
